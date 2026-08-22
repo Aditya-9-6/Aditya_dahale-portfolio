@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>ADITYA DAHALE | Systems & AI Software Engineer</title>
-    <meta name="description" content="Portfolio of Aditya Dahale - Open Source Contributor (smoltcp, smartcore, maxminddb-rust), Python Backend & Systems Developer with verified AWS and IBM credentials.">
+    <meta name="description" content="Portfolio of Aditya Dahale - Creator of Spryzen (4.83M RPS Network Engine), Open Source Contributor (smoltcp, smartcore, maxminddb-rust), with verified AWS & IBM credentials.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -70,23 +70,44 @@
             pointer-events: none;
         }
         
-        /* Layered Shaded Glassmorphism (Mobile Optimized) */
+        /* Layered Shaded Glassmorphism */
         .glass-card-layered {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(254, 243, 199, 0.35) 40%, rgba(255, 251, 235, 0.75) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(254, 243, 199, 0.35) 40%, rgba(255, 251, 235, 0.8) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(217, 119, 6, 0.22);
             box-shadow: 0 15px 35px -12px rgba(180, 83, 9, 0.1), 
                         inset 0 1px 2px rgba(255, 255, 255, 0.95);
             transform-style: preserve-3d;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @media (hover: hover) {
             .glass-card-layered:hover {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 243, 199, 0.5) 40%, rgba(254, 240, 138, 0.3) 100%);
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 243, 199, 0.55) 40%, rgba(254, 240, 138, 0.35) 100%);
                 border-color: rgba(217, 119, 6, 0.6);
                 box-shadow: 0 25px 50px -10px rgba(180, 83, 9, 0.22);
                 transform: translateY(-4px);
+            }
+        }
+
+        /* Flagship Spryzen Card */
+        .glass-card-flagship {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(254, 243, 199, 0.6) 35%, rgba(254, 215, 170, 0.45) 100%);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 2px solid rgba(217, 119, 6, 0.45);
+            box-shadow: 0 25px 60px -15px rgba(217, 119, 6, 0.2), 
+                        inset 0 1px 3px rgba(255, 255, 255, 1),
+                        inset 0 -3px 8px rgba(251, 191, 36, 0.2);
+            transform-style: preserve-3d;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @media (hover: hover) {
+            .glass-card-flagship:hover {
+                border-color: rgba(217, 119, 6, 0.85);
+                box-shadow: 0 30px 70px -10px rgba(217, 119, 6, 0.3), 
+                            inset 0 1px 4px rgba(255, 255, 255, 1);
+                transform: translateY(-5px);
             }
         }
 
@@ -146,13 +167,13 @@
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-    <!-- 3D Three.js Interactive Particle Canvas (Mobile Touch Enabled) -->
+    <!-- 3D Three.js Interactive Dense Particle Canvas (4,800+ nodes) -->
     <canvas id="webgl-canvas"></canvas>
 
     <!-- Content Wrapper -->
     <div class="relative z-10 w-full overflow-hidden">
 
-        <!-- Navigation Bar (Fully Mobile Responsive) -->
+        <!-- Navigation Bar -->
         <nav class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold-200/70 shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
                 <a href="#" class="font-mono font-extrabold text-lg sm:text-xl tracking-wider text-slate-900 flex items-center gap-2 group">
@@ -160,11 +181,11 @@
                     <span>ADITYA<span class="text-gold-600">.</span>DAHALE</span>
                 </a>
                 <div class="hidden md:flex items-center gap-8 text-sm font-mono text-slate-600 font-medium">
+                    <a href="#spryzen" class="text-gold-700 font-bold hover:text-gold-600 transition-colors">// Spryzen (4.8M RPS)</a>
                     <a href="#opensource" class="hover:text-gold-600 transition-colors">// Open Source PRs</a>
                     <a href="#projects" class="hover:text-gold-600 transition-colors">// Projects</a>
                     <a href="#internships" class="hover:text-gold-600 transition-colors">// Internships</a>
                     <a href="#certifications" class="hover:text-gold-600 transition-colors">// Certifications</a>
-                    <a href="#skills" class="hover:text-gold-600 transition-colors">// Skills</a>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3">
                     <a href="https://github.com/aditya-9-6" target="_blank" class="p-2 sm:p-2.5 rounded-xl bg-white/90 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="GitHub">
@@ -188,13 +209,13 @@
                 <!-- Status Badge -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-gold-50 via-amber-50 to-orange-50 border border-gold-300/80 text-gold-900 text-[11px] sm:text-xs font-mono shadow-sm self-start">
                     <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>AVAILABLE FOR FULL-TIME &amp; REMOTE ROLES</span>
+                    <span>CREATOR OF SPRYZEN • OPEN SOURCE SYSTEMS BUILDER</span>
                 </div>
 
                 <!-- Name Headline -->
                 <div>
                     <h2 class="text-gold-700 font-mono text-xs sm:text-base font-bold tracking-widest uppercase mb-1 sm:mb-2">
-                        &gt; Software Engineer &amp; Open-Source Contributor
+                        &gt; Systems &amp; AI Software Engineer
                     </h2>
                     <h1 class="text-4xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none gold-gradient-text mb-3 sm:mb-4">
                         ADITYA DAHALE
@@ -203,27 +224,27 @@
 
                 <!-- Subtitle -->
                 <p class="text-lg sm:text-2xl text-slate-700 font-normal leading-snug sm:leading-relaxed">
-                    Engineering <strong class="text-slate-900 font-semibold">High-Performance Backends</strong>, <strong class="text-gold-700 font-semibold">RAG/AI Systems</strong>, and <strong class="text-slate-900 font-semibold">Low-Level Network Optimizations</strong>.
+                    Creator of <strong class="text-gold-700 font-semibold">Spryzen</strong> (4.83M RPS Network Engine), open-source contributor (<span class="font-mono text-slate-900 font-medium">smoltcp</span>, <span class="font-mono text-slate-900 font-medium">smartcore</span>, <span class="font-mono text-slate-900 font-medium">maxminddb</span>), and AI/RAG architect.
                 </p>
 
                 <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
-                    Merged contributions in high-throughput network stacks (<span class="font-mono font-semibold text-slate-900 bg-gold-100/80 px-1.5 py-0.5 rounded border border-gold-200">smoltcp</span>, <span class="font-mono font-semibold text-slate-900 bg-gold-100/80 px-1.5 py-0.5 rounded border border-gold-200">smartcore</span>, <span class="font-mono font-semibold text-slate-900 bg-gold-100/80 px-1.5 py-0.5 rounded border border-gold-200">maxminddb</span>). AWS &amp; IBM certified with hands-on AICTE/IBM AI internships.
+                    Designing ultra-low latency network inspection engines, production Python backends, and Agentic AI workflows. AWS &amp; IBM certified with AICTE/IBM virtual internships.
                 </p>
 
-                <!-- Action CTA Buttons (Mobile Friendly Full Width / Wrap) -->
+                <!-- Action CTA Buttons -->
                 <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4 w-full sm:w-auto">
-                    <a href="#opensource" class="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-bold text-center flex items-center justify-center gap-2.5 shadow-lg shadow-gold-500/25 text-sm sm:text-base">
-                        <i data-lucide="git-pull-request" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                        <span>Explore Merged PRs</span>
+                    <a href="#spryzen" class="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-bold text-center flex items-center justify-center gap-2.5 shadow-lg shadow-gold-500/25 text-sm sm:text-base">
+                        <i data-lucide="zap" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        <span>Explore Spryzen Engine (4.8M RPS)</span>
                     </a>
                     <div class="flex items-center gap-3 w-full sm:w-auto">
+                        <a href="https://github.com/Aditya-9-6/Spryzen-Benchmarks" target="_blank" class="flex-1 sm:flex-none px-5 py-3.5 rounded-xl glass-card-layered text-slate-800 font-semibold text-center flex items-center justify-center gap-2 shadow-sm text-sm sm:text-base">
+                            <i data-lucide="activity" class="w-4 h-4 text-amber-600"></i>
+                            <span>Benchmarks Repo</span>
+                        </a>
                         <a href="https://github.com/aditya-9-6" target="_blank" class="flex-1 sm:flex-none px-5 py-3.5 rounded-xl glass-card-layered text-slate-800 font-semibold text-center flex items-center justify-center gap-2 shadow-sm text-sm sm:text-base">
                             <i data-lucide="github" class="w-4 h-4 text-slate-600"></i>
                             <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="flex-1 sm:flex-none px-5 py-3.5 rounded-xl glass-card-layered text-slate-800 font-semibold text-center flex items-center justify-center gap-2 shadow-sm text-sm sm:text-base">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-sky-600"></i>
-                            <span>LinkedIn</span>
                         </a>
                     </div>
                 </div>
@@ -231,16 +252,16 @@
 
             <!-- Layered Stat Counter Cards -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 w-full mt-12 sm:mt-20">
+                <div class="p-4 sm:p-6 rounded-2xl glass-card-flagship js-tilt" data-tilt data-tilt-max="8">
+                    <div class="text-[10px] sm:text-xs font-mono text-gold-800 font-bold uppercase tracking-wider mb-1 sm:mb-2">Flagship Engine</div>
+                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">4.83M RPS</div>
+                    <div class="text-[11px] sm:text-xs text-gold-900 font-medium mt-1 sm:mt-2">0.207µs P99 Latency</div>
+                </div>
+
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-[10px] sm:text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-1 sm:mb-2">Open Source</div>
                     <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">3x Merged</div>
                     <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">smoltcp, smartcore, maxminddb</div>
-                </div>
-
-                <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
-                    <div class="text-[10px] sm:text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-1 sm:mb-2">Core Stack</div>
-                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">Python</div>
-                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">FastAPI, Flask &amp; Async APIs</div>
                 </div>
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
@@ -253,6 +274,116 @@
                     <div class="text-[10px] sm:text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-1 sm:mb-2">Credentials</div>
                     <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">10x Certs</div>
                     <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">AWS, IBM, &amp; Microsoft</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLAGSHIP SHOWCASE: SPRYZEN ARCHITECTURE & BENCHMARKS -->
+        <section id="spryzen" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gold-300/80 scrub-section">
+            <div class="flex flex-col gap-2 sm:gap-3 mb-10 sm:mb-16">
+                <div class="inline-flex items-center gap-2 text-gold-700 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">
+                    <i data-lucide="cpu" class="w-4 h-4 text-amber-600"></i>
+                    <span>// Flagship Core Engineering Project</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Spryzen Engine &amp; Benchmarks</h2>
+                <p class="text-slate-600 max-w-3xl text-sm sm:text-base leading-relaxed">
+                    A hyper-performance, zero-allocation network security &amp; TLS telemetry engine achieving <strong>4.83 Million RPS</strong> on a single bare-metal node with sub-microsecond latency.
+                </p>
+            </div>
+
+            <!-- Main Spryzen Feature Card -->
+            <div class="rounded-3xl p-6 sm:p-10 glass-card-flagship mb-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 flex flex-col gap-5">
+                        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                            <span class="px-3.5 py-1 rounded-full text-xs font-mono bg-amber-200/80 text-amber-950 font-bold border border-amber-400/60 shadow-sm">
+                                🚀 Flagship Architecture
+                            </span>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 font-semibold border border-emerald-300">
+                                ✓ Docker Reproducible
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl sm:text-4xl font-black text-slate-900 leading-tight">
+                            Ultra-High Throughput Zero-Allocation Network Telemetry &amp; Security
+                        </h3>
+
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                            Spryzen is designed for mission-critical enterprise edge infrastructure. It parses raw TCP/IP packets and extracts deterministic JA4 TLS fingerprints without performing expensive full SSL decryption or triggering heap allocations in the critical packet path.
+                        </p>
+
+                        <!-- Key Architecture Bullets -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Zero Allocation:</strong> Stack-allocated zero-copy byte slices.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Single-Pass Parser:</strong> Direct binary node decoding.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Hardware Accelerated:</strong> Cache-aligned ring buffers.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span><strong>Instant Verification:</strong> 1-command Docker test runner.</span>
+                            </div>
+                        </div>
+
+                        <!-- Benchmark Repository Action Link -->
+                        <div class="pt-4 flex flex-wrap items-center gap-3">
+                            <a href="https://github.com/Aditya-9-6/Spryzen-Benchmarks" target="_blank" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-gold-600 text-white font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-md shadow-amber-600/25 text-sm sm:text-base">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                                <span>Inspect Spryzen-Benchmarks Repo</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Benchmark Metrics Box -->
+                    <div class="lg:col-span-5 flex flex-col gap-4">
+                        <div class="bg-slate-950 text-emerald-400 p-5 sm:p-6 rounded-2xl font-mono text-xs shadow-2xl border border-gold-400/30">
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-400 text-[11px]">
+                                <span>// Spryzen Benchmark Harness Telemetry</span>
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            </div>
+                            
+                            <div class="py-3 space-y-2">
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Throughput (RPS):</span>
+                                    <span class="text-amber-400 font-bold text-sm sm:text-base">4,832,190 req/s</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>P50 Latency:</span>
+                                    <span class="text-emerald-400 font-bold">0.142 µs (142 ns)</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>P99 Latency:</span>
+                                    <span class="text-emerald-400 font-bold">0.207 µs (207 ns)</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Heap Allocations:</span>
+                                    <span class="text-sky-400 font-bold">0 allocs/op</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Core Utilization:</span>
+                                    <span class="text-slate-200">100% Lock-Free</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400">
+                                <span class="text-slate-500">$</span> docker run --rm aditya96/spryzen-benchmarks
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white/70 border border-gold-300/60 text-xs font-mono text-slate-700">
+                            <strong>📊 Reproducibility Guarantee:</strong> Every benchmark number is independently verifiable on any Linux / x86_64 host using the public Docker container.
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -392,11 +523,11 @@
             </div>
         </section>
 
-        <!-- FEATURED PROJECTS SECTION -->
+        <!-- FEATURED AI & BACKEND PROJECTS SECTION -->
         <section id="projects" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gold-200/70 scrub-section">
             <div class="flex flex-col gap-2 sm:gap-3 mb-10 sm:mb-16">
                 <div class="text-gold-700 font-mono text-xs sm:text-sm font-bold uppercase tracking-wider">// Applications &amp; AI Systems</div>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Featured Projects</h2>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Featured AI &amp; Backend Projects</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
@@ -412,7 +543,7 @@
                     <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono text-slate-700 pt-3 sm:pt-4 border-t border-amber-200/50">
                         <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">Python</span>
                         <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">Flask APIs</span>
-                        <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">Vector Search</span>
+                        <span class="px-2.5 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">Vector Search</span>
                         <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">RAG</span>
                     </div>
                 </div>
@@ -429,7 +560,7 @@
                     <div class="flex flex-wrap gap-1.5 sm:gap-2 text-xs font-mono text-slate-700 pt-3 sm:pt-4 border-t border-amber-200/50">
                         <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">Python</span>
                         <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">LangChain</span>
-                        <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">LLM APIs</span>
+                        <span class="px-2.5 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">LLM APIs</span>
                         <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/80 border border-amber-200">Agentic AI</span>
                     </div>
                 </div>
@@ -617,14 +748,14 @@
                 <div class="p-5 sm:p-6 rounded-2xl glass-card-layered">
                     <div class="flex items-center gap-3 mb-3 sm:mb-4 text-gold-700 font-bold">
                         <i data-lucide="server" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                        <h3 class="text-base sm:text-lg text-slate-900">Backend &amp; APIs</h3>
+                        <h3 class="text-base sm:text-lg text-slate-900">High-Perf &amp; Systems</h3>
                     </div>
                     <ul class="space-y-2 text-xs sm:text-sm text-slate-700 font-mono">
-                        <li>• Python (Core &amp; Async)</li>
-                        <li>• FastAPI &amp; Flask</li>
-                        <li>• RESTful API Architecture</li>
-                        <li>• PostgreSQL, SQLite &amp; SQL</li>
-                        <li>• Redis Caching</li>
+                        <li>• Zero-Allocation Networking</li>
+                        <li>• JA4+ TLS Fingerprinting</li>
+                        <li>• Python (FastAPI, Flask, Async)</li>
+                        <li>• PostgreSQL, SQLite &amp; Redis</li>
+                        <li>• TCP/IP Wire Protocol Parsing</li>
                     </ul>
                 </div>
 
@@ -650,7 +781,7 @@
                     <ul class="space-y-2 text-xs sm:text-sm text-slate-700 font-mono">
                         <li>• AWS (EC2, S3, IAM, Cloud)</li>
                         <li>• Docker Containerization</li>
-                        <li>• Network Fingerprinting &amp; TCP</li>
+                        <li>• Network Security &amp; Anomaly Detection</li>
                         <li>• OWASP Top 10 Security</li>
                         <li>• Linux &amp; Git Workflows</li>
                     </ul>
@@ -665,7 +796,7 @@
             </div>
             <h2 class="text-3xl sm:text-6xl font-black text-slate-900 mb-4 sm:mb-6 leading-tight">Let's Build Something High-Impact.</h2>
             <p class="text-slate-600 text-sm sm:text-lg max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed">
-                Ready to contribute to your engineering team immediately. Let's connect on LinkedIn or explore my merged pull requests on GitHub.
+                Ready to contribute to your engineering team immediately. Let's connect on LinkedIn or explore my Spryzen engine and merged pull requests on GitHub.
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 w-full">
@@ -682,8 +813,8 @@
             <div class="mt-16 sm:mt-24 pt-6 sm:pt-8 border-t border-slate-200 text-xs text-slate-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div>© 2026 ADITYA DAHALE. All Rights Reserved.</div>
                 <div class="flex items-center gap-4 sm:gap-6">
+                    <a href="#spryzen" class="hover:text-gold-700">Spryzen (4.8M RPS)</a>
                     <a href="#opensource" class="hover:text-gold-700">Open Source PRs</a>
-                    <a href="#projects" class="hover:text-gold-700">Projects</a>
                     <a href="https://github.com/aditya-9-6" target="_blank" class="hover:text-gold-700">GitHub</a>
                 </div>
             </div>
@@ -696,7 +827,7 @@
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Initialize VanillaTilt for 3D Layered Glass Cards (Disabled on pure touch devices for battery/smooth scrolling)
+        // Initialize VanillaTilt for 3D Layered Glass Cards (Desktop only)
         if (window.matchMedia("(hover: hover)").matches) {
             VanillaTilt.init(document.querySelectorAll(".js-tilt"), {
                 max: 8,
@@ -741,7 +872,7 @@
             );
         });
 
-        // Three.js Interactive Mobile & Desktop Particle Field
+        // Three.js Interactive Particle Field
         const canvas = document.getElementById('webgl-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -750,7 +881,7 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        // Create Dense Interactive Particles (optimized for both mobile and desktop)
+        // Create 4,800 Dense Particles
         const isMobile = window.innerWidth < 768;
         const particleCount = isMobile ? 2400 : 4800;
         const geometry = new THREE.BufferGeometry();
@@ -829,7 +960,6 @@
             requestAnimationFrame(animate);
             const elapsedTime = clock.getElapsedTime();
 
-            // Dynamic rotation with smooth interpolation
             particles.rotation.y = elapsedTime * 0.035 + targetX + (scrollYPos * 0.0008);
             particles.rotation.x = elapsedTime * 0.018 + targetY + (scrollYPos * 0.0004);
             particles.position.y = -(scrollYPos * 0.003);
@@ -838,7 +968,6 @@
         }
         animate();
 
-        // Resize handler (auto adapts on phone orientation flip)
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
