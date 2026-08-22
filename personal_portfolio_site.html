@@ -91,15 +91,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-shimmer {
-            background: linear-gradient(90deg, #d97706, #fbbf24, #d97706);
-            background-size: 200% auto;
-            animation: shimmer 4s linear infinite;
-        }
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
         .scroll-progress-bar {
             position: fixed;
             top: 0;
@@ -121,14 +112,14 @@
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-    <!-- 3D Three.js Interactive Particle & Golden Grid Canvas -->
+    <!-- 3D Three.js Interactive Dense Particle Canvas -->
     <canvas id="webgl-canvas"></canvas>
 
     <!-- Content Wrapper -->
     <div class="relative z-10">
 
         <!-- Navigation Bar (Glassmorphic White & Gold) -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-gold-200/60 shadow-sm">
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/75 backdrop-blur-xl border-b border-gold-200/60 shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                 <a href="#" class="font-mono font-extrabold text-xl tracking-wider text-slate-900 flex items-center gap-2 group">
                     <span class="w-8 h-8 rounded-lg bg-gold-100 border border-gold-300 flex items-center justify-center text-gold-600 font-bold group-hover:rotate-12 transition-transform">⚡</span>
@@ -664,7 +655,7 @@
 
     </div>
 
-    <!-- 3D Golden Particle Background & GSAP Scroll-Scrubbed Animation Script -->
+    <!-- 3D Dense Particle Background & GSAP Scroll-Scrubbed Animation Script -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
@@ -712,7 +703,7 @@
             );
         });
 
-        // Three.js Interactive Luxury Gold & Black Geometric Particles Canvas
+        // Three.js Interactive Ultra-Dense Gold & Obsidian Particle Field
         const canvas = document.getElementById('webgl-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -721,36 +712,50 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        // Create Particles (Gold, Dark Slate, and Amber)
-        const particleCount = 750;
+        // Create 2,200 Interactive Particles
+        const particleCount = 2200;
         const geometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
 
         const colorGold = new THREE.Color(0xd97706);
         const colorAmber = new THREE.Color(0xfbbf24);
-        const colorDark = new THREE.Color(0x334155);
+        const colorChampagne = new THREE.Color(0xf59e0b);
+        const colorDark = new THREE.Color(0x1e293b);
+        const colorMuted = new THREE.Color(0x64748b);
 
         for (let i = 0; i < particleCount * 3; i += 3) {
-            positions[i] = (Math.random() - 0.5) * 26;
-            positions[i + 1] = (Math.random() - 0.5) * 26;
-            positions[i + 2] = (Math.random() - 0.5) * 26;
+            positions[i] = (Math.random() - 0.5) * 32;
+            positions[i + 1] = (Math.random() - 0.5) * 32;
+            positions[i + 2] = (Math.random() - 0.5) * 32;
 
             const rand = Math.random();
-            const mixedColor = rand > 0.6 ? colorGold : (rand > 0.3 ? colorDark : colorAmber);
-            colors[i] = mixedColor.r;
-            colors[i + 1] = mixedColor.g;
-            colors[i + 2] = mixedColor.b;
+            let selectedColor;
+            if (rand > 0.65) {
+                selectedColor = colorGold;
+            } else if (rand > 0.45) {
+                selectedColor = colorAmber;
+            } else if (rand > 0.30) {
+                selectedColor = colorChampagne;
+            } else if (rand > 0.15) {
+                selectedColor = colorDark;
+            } else {
+                selectedColor = colorMuted;
+            }
+
+            colors[i] = selectedColor.r;
+            colors[i + 1] = selectedColor.g;
+            colors[i + 2] = selectedColor.b;
         }
 
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.055,
+            size: 0.058,
             vertexColors: true,
             transparent: true,
-            opacity: 0.45
+            opacity: 0.62
         });
 
         const particles = new THREE.Points(geometry, material);
@@ -762,8 +767,8 @@
         let mouseX = 0;
         let mouseY = 0;
         window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.35;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.35;
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.45;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.45;
         });
 
         // 3D Scroll Scrubbing
@@ -778,9 +783,9 @@
             const elapsedTime = clock.getElapsedTime();
 
             // Dynamic rotation based on time + scroll scrub
-            particles.rotation.y = elapsedTime * 0.025 + mouseX + (scrollYPos * 0.0008);
-            particles.rotation.x = elapsedTime * 0.012 + mouseY + (scrollYPos * 0.0004);
-            particles.position.y = -(scrollYPos * 0.0028);
+            particles.rotation.y = elapsedTime * 0.035 + mouseX + (scrollYPos * 0.001);
+            particles.rotation.x = elapsedTime * 0.018 + mouseY + (scrollYPos * 0.0005);
+            particles.position.y = -(scrollYPos * 0.0032);
 
             renderer.render(scene, camera);
         }
