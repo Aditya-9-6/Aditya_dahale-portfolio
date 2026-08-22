@@ -14,7 +14,7 @@
                 extend: {
                     colors: {
                         gold: {
-                            50: '#fffbeb',
+                            50: '#fffdf5',
                             100: '#fef3c7',
                             200: '#fde68a',
                             300: '#fcd34d',
@@ -24,13 +24,6 @@
                             700: '#92400e',
                             800: '#78350f',
                             900: '#451a03',
-                        },
-                        lux: {
-                            bg: '#fcfbfa',
-                            surface: '#ffffff',
-                            card: 'rgba(255, 255, 255, 0.72)',
-                            dark: '#0f172a',
-                            muted: '#64748b'
                         }
                     },
                     fontFamily: {
@@ -58,7 +51,7 @@
 
     <style>
         body {
-            background-color: #fbfaf8;
+            background-color: #fbf9f5;
             color: #1e293b;
             overflow-x: hidden;
         }
@@ -71,26 +64,68 @@
             z-index: 0;
             pointer-events: none;
         }
-        /* Pure Luxury Glassmorphism */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(217, 119, 6, 0.2);
-            box-shadow: 0 20px 40px -15px rgba(217, 119, 6, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        
+        /* Layered Shaded Glassmorphism (Multi-Layer Depth) */
+        .glass-card-layered {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(254, 243, 199, 0.35) 40%, rgba(255, 251, 235, 0.75) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(217, 119, 6, 0.22);
+            box-shadow: 0 20px 45px -15px rgba(180, 83, 9, 0.1), 
+                        inset 0 1px 2px rgba(255, 255, 255, 0.95), 
+                        inset 0 -2px 6px rgba(251, 191, 36, 0.12);
             transform-style: preserve-3d;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .glass-card:hover {
-            border-color: rgba(217, 119, 6, 0.5);
-            box-shadow: 0 25px 50px -12px rgba(217, 119, 6, 0.2), 0 0 0 1px rgba(251, 191, 36, 0.5) inset;
-            transform: translateY(-4px);
+        .glass-card-layered:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 243, 199, 0.5) 40%, rgba(254, 240, 138, 0.3) 100%);
+            border-color: rgba(217, 119, 6, 0.6);
+            box-shadow: 0 25px 50px -10px rgba(180, 83, 9, 0.22), 
+                        inset 0 1px 3px rgba(255, 255, 255, 1), 
+                        inset 0 -3px 8px rgba(251, 191, 36, 0.25);
+            transform: translateY(-5px);
         }
+
+        /* Specific Purple-Gold Layered Tint for PRs */
+        .glass-card-pr {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(243, 232, 255, 0.45) 50%, rgba(254, 243, 199, 0.4) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(147, 51, 234, 0.25);
+            box-shadow: 0 20px 45px -15px rgba(147, 51, 234, 0.1), 
+                        inset 0 1px 2px rgba(255, 255, 255, 0.95),
+                        inset 0 -2px 6px rgba(168, 85, 247, 0.1);
+            transform-style: preserve-3d;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-pr:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 232, 255, 0.65) 50%, rgba(254, 243, 199, 0.55) 100%);
+            border-color: rgba(147, 51, 234, 0.6);
+            box-shadow: 0 25px 50px -10px rgba(147, 51, 234, 0.22);
+            transform: translateY(-5px);
+        }
+
+        /* Specific Amethyst-Gold Layered Tint for Internships */
+        .glass-card-internship {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(238, 242, 255, 0.5) 45%, rgba(254, 243, 199, 0.35) 100%);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            box-shadow: 0 20px 45px -15px rgba(99, 102, 241, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+            transform-style: preserve-3d;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-internship:hover {
+            border-color: rgba(99, 102, 241, 0.6);
+            box-shadow: 0 25px 50px -10px rgba(99, 102, 241, 0.2);
+            transform: translateY(-5px);
+        }
+
         .gold-gradient-text {
             background: linear-gradient(135deg, #0f172a 0%, #b45309 50%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .scroll-progress-bar {
             position: fixed;
             top: 0;
@@ -100,9 +135,9 @@
             z-index: 100;
             width: 0%;
         }
-        /* Custom Scrollbar */
+
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #fbfaf8; }
+        ::-webkit-scrollbar-track { background: #fbf9f5; }
         ::-webkit-scrollbar-thumb { background: #fcd34d; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #d97706; }
     </style>
@@ -112,17 +147,17 @@
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-    <!-- 3D Three.js Interactive Dense Particle Canvas -->
+    <!-- 3D Three.js Interactive Ultra-Dense Particle Canvas (4,800+ dots) -->
     <canvas id="webgl-canvas"></canvas>
 
     <!-- Content Wrapper -->
     <div class="relative z-10">
 
-        <!-- Navigation Bar (Glassmorphic White & Gold) -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/75 backdrop-blur-xl border-b border-gold-200/60 shadow-sm">
+        <!-- Navigation Bar (Layered Glassmorphism) -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-gold-200/70 shadow-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                 <a href="#" class="font-mono font-extrabold text-xl tracking-wider text-slate-900 flex items-center gap-2 group">
-                    <span class="w-8 h-8 rounded-lg bg-gold-100 border border-gold-300 flex items-center justify-center text-gold-600 font-bold group-hover:rotate-12 transition-transform">⚡</span>
+                    <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-100 to-amber-200 border border-gold-300 flex items-center justify-center text-gold-700 font-bold group-hover:rotate-12 transition-transform shadow-inner">⚡</span>
                     <span>ADITYA<span class="text-gold-600">.</span>DAHALE</span>
                 </a>
                 <div class="hidden md:flex items-center gap-8 text-sm font-mono text-slate-600 font-medium">
@@ -133,13 +168,13 @@
                     <a href="#skills" class="hover:text-gold-600 transition-colors">// Skills</a>
                 </div>
                 <div class="flex items-center gap-3">
-                    <a href="https://github.com/aditya-9-6" target="_blank" class="p-2.5 rounded-xl bg-white/80 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="GitHub">
+                    <a href="https://github.com/aditya-9-6" target="_blank" class="p-2.5 rounded-xl bg-white/85 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="GitHub">
                         <i data-lucide="github" class="w-5 h-5"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="p-2.5 rounded-xl bg-white/80 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="p-2.5 rounded-xl bg-white/85 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="LinkedIn">
                         <i data-lucide="linkedin" class="w-5 h-5"></i>
                     </a>
-                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-white font-semibold hover:from-gold-700 hover:to-gold-600 shadow-md shadow-gold-500/20 text-sm transition-all">
+                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-semibold hover:brightness-110 shadow-md shadow-gold-500/25 text-sm transition-all">
                         <span>Get In Touch</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -151,8 +186,8 @@
         <section class="pt-36 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[88vh] flex flex-col justify-center items-start">
             <div class="flex flex-col gap-6 max-w-4xl">
                 
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gold-50 border border-gold-300 text-gold-800 text-xs font-mono shadow-sm">
+                <!-- Status Badge with Layered Depth -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-gold-50 via-amber-50 to-orange-50 border border-gold-300/80 text-gold-900 text-xs font-mono shadow-sm">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span>AVAILABLE FOR FULL-TIME / REMOTE ENGINEERING ROLES</span>
                 </div>
@@ -167,61 +202,61 @@
                     </h1>
                 </div>
 
-                <!-- Punchy Subtitle -->
+                <!-- Subtitle -->
                 <p class="text-xl sm:text-2xl text-slate-700 font-normal leading-relaxed">
                     Engineering <strong class="text-slate-900 font-semibold">High-Performance Backends</strong>, <strong class="text-gold-700 font-semibold">RAG/AI Systems</strong>, and <strong class="text-slate-900 font-semibold">Low-Level Network Optimizations</strong>.
                 </p>
 
                 <p class="text-base text-slate-600 max-w-2xl leading-relaxed">
-                    Merged contributions in high-throughput network stacks (<span class="font-mono font-semibold text-slate-900 bg-gold-100/70 px-1.5 py-0.5 rounded">smoltcp</span>, <span class="font-mono font-semibold text-slate-900 bg-gold-100/70 px-1.5 py-0.5 rounded">smartcore</span>, <span class="font-mono font-semibold text-slate-900 bg-gold-100/70 px-1.5 py-0.5 rounded">maxminddb</span>). AWS &amp; IBM certified with hands-on AICTE/IBM AI internships.
+                    Merged contributions in high-throughput network stacks (<span class="font-mono font-semibold text-slate-900 bg-gold-100/80 px-1.5 py-0.5 rounded border border-gold-200">smoltcp</span>, <span class="font-mono font-semibold text-slate-900 bg-gold-100/80 px-1.5 py-0.5 rounded border border-gold-200">smartcore</span>, <span class="font-mono font-semibold text-slate-900 bg-gold-100/80 px-1.5 py-0.5 rounded border border-gold-200">maxminddb</span>). AWS &amp; IBM certified with hands-on AICTE/IBM AI internships.
                 </p>
 
                 <!-- Action CTA Buttons -->
                 <div class="flex flex-wrap items-center gap-4 pt-4">
-                    <a href="#opensource" class="px-7 py-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold hover:from-gold-700 hover:to-gold-600 transition-all flex items-center gap-3 shadow-xl shadow-gold-500/20">
+                    <a href="#opensource" class="px-7 py-4 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-bold hover:brightness-110 transition-all flex items-center gap-3 shadow-xl shadow-gold-500/25">
                         <i data-lucide="git-pull-request" class="w-5 h-5"></i>
                         <span>Explore Merged Pull Requests</span>
                     </a>
-                    <a href="https://github.com/aditya-9-6" target="_blank" class="px-7 py-4 rounded-xl glass-card text-slate-800 font-semibold hover:bg-white transition-all flex items-center gap-3 shadow-sm">
+                    <a href="https://github.com/aditya-9-6" target="_blank" class="px-7 py-4 rounded-xl glass-card-layered text-slate-800 font-semibold hover:bg-white transition-all flex items-center gap-3 shadow-sm">
                         <i data-lucide="github" class="w-5 h-5 text-slate-600"></i>
                         <span>GitHub (aditya-9-6)</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="px-7 py-4 rounded-xl glass-card text-slate-800 font-semibold hover:bg-white transition-all flex items-center gap-3 shadow-sm">
+                    <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="px-7 py-4 rounded-xl glass-card-layered text-slate-800 font-semibold hover:bg-white transition-all flex items-center gap-3 shadow-sm">
                         <i data-lucide="linkedin" class="w-5 h-5 text-sky-600"></i>
                         <span>LinkedIn</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Stat Counter Cards -->
+            <!-- Layered Stat Counter Cards -->
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-20">
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="12">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="12">
                     <div class="text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-2">Open Source</div>
                     <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-mono">3x Merged</div>
-                    <div class="text-xs text-slate-500 mt-2">smoltcp, smartcore, maxminddb</div>
+                    <div class="text-xs text-slate-600 mt-2">smoltcp, smartcore, maxminddb</div>
                 </div>
 
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="12">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="12">
                     <div class="text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-2">Core Stack</div>
                     <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-mono">Python</div>
-                    <div class="text-xs text-slate-500 mt-2">FastAPI, Flask &amp; Async APIs</div>
+                    <div class="text-xs text-slate-600 mt-2">FastAPI, Flask &amp; Async APIs</div>
                 </div>
 
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="12">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="12">
                     <div class="text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-2">AI Experience</div>
                     <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-mono">RAG &amp; Agents</div>
-                    <div class="text-xs text-slate-500 mt-2">Vector Search &amp; LLM Pipelines</div>
+                    <div class="text-xs text-slate-600 mt-2">Vector Search &amp; LLM Pipelines</div>
                 </div>
 
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="12">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="12">
                     <div class="text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-2">Credentials</div>
                     <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-mono">10x Certs</div>
-                    <div class="text-xs text-slate-500 mt-2">AWS, IBM, and Microsoft</div>
+                    <div class="text-xs text-slate-600 mt-2">AWS, IBM, and Microsoft</div>
                 </div>
             </div>
         </section>
 
-        <!-- DEDICATED OPEN SOURCE SECTION WITH DIRECT CLICKABLE PR LINKS -->
+        <!-- DEDICATED OPEN SOURCE SECTION WITH CLICKABLE PRs & LAYERED SHADING -->
         <section id="opensource" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gold-200/70 scrub-section">
             <div class="flex flex-col gap-3 mb-16">
                 <div class="inline-flex items-center gap-2 text-gold-700 font-mono text-sm font-bold uppercase tracking-wider">
@@ -238,21 +273,21 @@
                 
                 <!-- Merged PR 1: smoltcp-rs #1194 -->
                 <a href="https://github.com/smoltcp-rs/smoltcp/pull/1194" target="_blank" class="block group">
-                    <div class="rounded-2xl p-8 glass-card border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                    <div class="rounded-2xl p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-purple-100 border border-purple-300 flex items-center justify-center text-purple-700 font-mono font-bold text-sm">
+                                <div class="w-10 h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-sm shadow-inner">
                                     #1194
                                 </div>
                                 <div>
-                                    <div class="text-xs font-mono text-slate-500">smoltcp-rs / smoltcp</div>
+                                    <div class="text-xs font-mono text-slate-600">smoltcp-rs / smoltcp</div>
                                     <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-2">
                                         <span>perf(wire/tcp): add single-pass zero-allocation TcpOptionsSummary parser</span>
                                         <i data-lucide="arrow-up-right" class="w-5 h-5 text-gold-600 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-100 text-purple-800 border border-purple-300 font-semibold self-start sm:self-auto">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
                                 <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
                                 Merged PR
                             </span>
@@ -262,13 +297,13 @@
                             <strong>What was achieved:</strong> Engineered a high-speed, single-pass zero-allocation parser for TCP options summary. Eliminates dynamic memory allocations on the packet wire-path, drastically accelerating packet ingestion in bare-metal TCP/IP networking.
                         </p>
 
-                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
-                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-600">
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">TCP/IP Wire Stack</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Zero-Allocation</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Performance Optimization</span>
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700">
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">TCP/IP Wire Stack</span>
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Zero-Allocation</span>
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Performance Optimization</span>
                             </div>
-                            <span class="text-xs font-mono font-semibold text-gold-700 group-hover:underline flex items-center gap-1">
+                            <span class="text-xs font-mono font-bold text-gold-700 group-hover:underline flex items-center gap-1">
                                 Click to View PR #1194 on GitHub →
                             </span>
                         </div>
@@ -277,21 +312,21 @@
 
                 <!-- Merged PR 2: smartcorelib #386 -->
                 <a href="https://github.com/smartcorelib/smartcore/pull/386" target="_blank" class="block group">
-                    <div class="rounded-2xl p-8 glass-card border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                    <div class="rounded-2xl p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-purple-100 border border-purple-300 flex items-center justify-center text-purple-700 font-mono font-bold text-sm">
+                                <div class="w-10 h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-sm shadow-inner">
                                     #386
                                 </div>
                                 <div>
-                                    <div class="text-xs font-mono text-slate-500">smartcorelib / smartcore</div>
+                                    <div class="text-xs font-mono text-slate-600">smartcorelib / smartcore</div>
                                     <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-2">
                                         <span>perf(ensemble): pre-allocate tree and sample vector capacities in forest models</span>
                                         <i data-lucide="arrow-up-right" class="w-5 h-5 text-gold-600 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-100 text-purple-800 border border-purple-300 font-semibold self-start sm:self-auto">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
                                 <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
                                 Merged PR
                             </span>
@@ -301,13 +336,13 @@
                             <strong>What was achieved:</strong> Optimized machine learning ensemble tree training performance by pre-allocating exact sample vector capacities, avoiding repeated heap buffer reallocations during Random Forest training cycles.
                         </p>
 
-                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
-                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-600">
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Machine Learning</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Random Forest</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Memory Pre-Allocation</span>
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700">
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Machine Learning</span>
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Random Forest</span>
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Memory Pre-Allocation</span>
                             </div>
-                            <span class="text-xs font-mono font-semibold text-gold-700 group-hover:underline flex items-center gap-1">
+                            <span class="text-xs font-mono font-bold text-gold-700 group-hover:underline flex items-center gap-1">
                                 Click to View PR #386 on GitHub →
                             </span>
                         </div>
@@ -316,21 +351,21 @@
 
                 <!-- Merged PR 3: oschwald/maxminddb-rust #120 -->
                 <a href="https://github.com/oschwald/maxminddb-rust/pull/120" target="_blank" class="block group">
-                    <div class="rounded-2xl p-8 glass-card border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                    <div class="rounded-2xl p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-purple-100 border border-purple-300 flex items-center justify-center text-purple-700 font-mono font-bold text-sm">
+                                <div class="w-10 h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-sm shadow-inner">
                                     #120
                                 </div>
                                 <div>
-                                    <div class="text-xs font-mono text-slate-500">oschwald / maxminddb-rust</div>
+                                    <div class="text-xs font-mono text-slate-600">oschwald / maxminddb-rust</div>
                                     <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-2">
                                         <span>reader: use u32::from_be_bytes for single-instruction 32-bit node decoding</span>
                                         <i data-lucide="arrow-up-right" class="w-5 h-5 text-gold-600 opacity-0 group-hover:opacity-100 transition-opacity"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-100 text-purple-800 border border-purple-300 font-semibold self-start sm:self-auto">
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
                                 <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
                                 Merged PR
                             </span>
@@ -340,13 +375,13 @@
                             <strong>What was achieved:</strong> Accelerated GeoIP database binary lookups by utilizing native big-endian byte conversion (`u32::from_be_bytes`), enabling single-CPU-instruction decoding of 32-bit database nodes.
                         </p>
 
-                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-100">
-                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-600">
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">MaxMind GeoIP</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Byte Decoding</span>
-                                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Instruction Optimization</span>
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700">
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">MaxMind GeoIP</span>
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Byte Decoding</span>
+                                <span class="px-2.5 py-1 rounded bg-white/70 border border-purple-200">Instruction Optimization</span>
                             </div>
-                            <span class="text-xs font-mono font-semibold text-gold-700 group-hover:underline flex items-center gap-1">
+                            <span class="text-xs font-mono font-bold text-gold-700 group-hover:underline flex items-center gap-1">
                                 Click to View PR #120 on GitHub →
                             </span>
                         </div>
@@ -365,36 +400,36 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project 1: RAG E-Commerce -->
-                <div class="rounded-2xl p-8 glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="rounded-2xl p-8 glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-gold-100 text-gold-800 border border-gold-300 font-semibold">AI &amp; RAG Architecture</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-100/90 text-amber-900 border border-amber-300 font-bold shadow-sm">AI &amp; RAG Architecture</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-3">RAG-Powered Intelligent Search &amp; E-Commerce</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-6">
                         Engineered a Retrieval-Augmented Generation (RAG) backend utilizing vector embeddings, OpenAI APIs, and Python Flask microservices to deliver semantic search and contextual product Q&amp;A.
                     </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700 pt-4 border-t border-slate-100">
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Flask / REST APIs</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Vector Embeddings</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">RAG</span>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700 pt-4 border-t border-amber-200/50">
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">Python</span>
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">Flask / REST APIs</span>
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">Vector Embeddings</span>
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">RAG</span>
                     </div>
                 </div>
 
                 <!-- Project 2: Jarvis AI -->
-                <div class="rounded-2xl p-8 glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="rounded-2xl p-8 glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-gold-100 text-gold-800 border border-gold-300 font-semibold">Autonomous AI Agents</span>
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-100/90 text-amber-900 border border-amber-300 font-bold shadow-sm">Autonomous AI Agents</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-3">Jarvis AI Multi-Tool Assistant</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-6">
                         Created an agentic assistant capable of dynamic tool calling, live web search, and automated code generation using LLM function calling and Python orchestration.
                     </p>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700 pt-4 border-t border-slate-100">
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LangChain</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LLM APIs</span>
-                        <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Agentic Workflows</span>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-700 pt-4 border-t border-amber-200/50">
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">Python</span>
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">LangChain</span>
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">LLM APIs</span>
+                        <span class="px-2.5 py-1 rounded bg-white/80 border border-amber-200">Agentic Workflows</span>
                     </div>
                 </div>
             </div>
@@ -412,32 +447,32 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Internship 1 -->
-                <div class="p-8 rounded-2xl glass-card js-tilt border-t-4 border-t-purple-600" data-tilt data-tilt-max="8">
+                <div class="p-8 rounded-2xl glass-card-internship js-tilt border-t-4 border-t-purple-600" data-tilt data-tilt-max="8">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-purple-100 text-purple-900 border border-purple-300 font-semibold">1M1B &amp; AICTE with IBM SkillsBuild</span>
-                        <span class="text-xs font-mono text-slate-500">Dec 2025 – Jan 2026</span>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-purple-100/90 text-purple-950 border border-purple-300 font-bold">1M1B &amp; AICTE with IBM SkillsBuild</span>
+                        <span class="text-xs font-mono text-slate-600">Dec 2025 – Jan 2026</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-2">AI for Sustainability Virtual Internship</h3>
                     <p class="text-slate-700 text-sm leading-relaxed mb-6">
                         Gained practical hands-on experience in <strong>Agentic AI and RAG systems</strong> to solve real-world problems. Developed intelligent data retrieval pipelines and responsible AI models aligned with UN Sustainable Development Goals.
                     </p>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-purple-800 font-semibold">
+                    <div class="pt-4 border-t border-purple-200/40 flex items-center justify-between text-xs font-mono text-purple-900 font-bold">
                         <span>Internship ID: 17630914316916a3e755254</span>
                         <i data-lucide="award" class="w-5 h-5"></i>
                     </div>
                 </div>
 
                 <!-- Internship 2 -->
-                <div class="p-8 rounded-2xl glass-card js-tilt border-t-4 border-t-purple-600" data-tilt data-tilt-max="8">
+                <div class="p-8 rounded-2xl glass-card-internship js-tilt border-t-4 border-t-purple-600" data-tilt data-tilt-max="8">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-purple-100 text-purple-900 border border-purple-300 font-semibold">Edunet Foundation &amp; AICTE with IBM SkillsBuild</span>
-                        <span class="text-xs font-mono text-slate-500">Dec 2025 – Jan 2026</span>
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-purple-100/90 text-purple-950 border border-purple-300 font-bold">Edunet Foundation &amp; AICTE with IBM SkillsBuild</span>
+                        <span class="text-xs font-mono text-slate-600">Dec 2025 – Jan 2026</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-2">Artificial Intelligence &amp; Machine Learning Internship</h3>
                     <p class="text-slate-700 text-sm leading-relaxed mb-6">
                         6-week intensive training on core <strong>Machine Learning algorithms, Data Science pipelines, and Neural Network architectures</strong> in Python.
                     </p>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-purple-800 font-semibold">
+                    <div class="pt-4 border-t border-purple-200/40 flex items-center justify-between text-xs font-mono text-purple-900 font-bold">
                         <span>STU ID: STU68b158667e0831756452966</span>
                         <i data-lucide="award" class="w-5 h-5"></i>
                     </div>
@@ -458,110 +493,110 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Cert 1 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">IBM • Issued Dec 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-2">Artificial Intelligence Fundamentals</h3>
-                    <p class="text-xs text-slate-500 mb-4">Skills: Generative AI, Artificial Intelligence (AI), Machine Learning.</p>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <p class="text-xs text-slate-600 mb-4">Skills: Generative AI, Artificial Intelligence (AI), Machine Learning.</p>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 2 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">IBM • Issued Nov 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-2">Python Project for AI &amp; Application Development</h3>
-                    <p class="text-xs text-slate-500 mb-4">Skills: Flask, IBM Watson, AI Application Development.</p>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <p class="text-xs text-slate-600 mb-4">Skills: Flask, IBM Watson, AI Application Development.</p>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 3 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">IBM • Issued Nov 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-1">Developing AI Applications with Python and Flask</h3>
-                    <div class="text-[11px] font-mono text-slate-600 mb-2 font-bold">ID: B6P39UJXATTJ</div>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <div class="text-[11px] font-mono text-slate-700 mb-2 font-bold">ID: B6P39UJXATTJ</div>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 4 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">Amazon Web Services • Issued Oct 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-1">AWS Cloud Practitioner Essentials</h3>
-                    <div class="text-[11px] font-mono text-slate-600 mb-2 font-bold">ID: J3NPR8SKCRSA</div>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <div class="text-[11px] font-mono text-slate-700 mb-2 font-bold">ID: J3NPR8SKCRSA</div>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 5 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">AWS / Coursera • Issued Jul 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-1">AWS AI Fundamentals and the Cloud</h3>
-                    <div class="text-[11px] font-mono text-slate-600 mb-2 font-bold">ID: KRW0LK1QSGU4</div>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <div class="text-[11px] font-mono text-slate-700 mb-2 font-bold">ID: KRW0LK1QSGU4</div>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 6 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">Microsoft • Issued Jul 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-2">Microsoft Python Programming Fundamentals</h3>
-                    <p class="text-xs text-slate-500 mb-4">Skills: Python (Programming Language), Data Structures.</p>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <p class="text-xs text-slate-600 mb-4">Skills: Python (Programming Language), Data Structures.</p>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 7 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">LinkedIn Learning • Issued Jul 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-2">Generative AI: The Evolution of Thoughtful Online Search</h3>
-                    <p class="text-xs text-slate-500 mb-4">Skills: Search Engine Technology, AI for Business.</p>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <p class="text-xs text-slate-600 mb-4">Skills: Search Engine Technology, AI for Business.</p>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 8 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">LinkedIn Learning • Issued Jul 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-2">What Is Generative AI?</h3>
-                    <p class="text-xs text-slate-500 mb-4">Skills: Generative AI Tools &amp; LLM Architecture.</p>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <p class="text-xs text-slate-600 mb-4">Skills: Generative AI Tools &amp; LLM Architecture.</p>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 9 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">IBM • Issued Jun 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-1">IBM Introduction to HTML, CSS, &amp; JavaScript</h3>
-                    <div class="text-[11px] font-mono text-slate-600 mb-2 font-bold">ID: 75B24V7B4Z3T</div>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <div class="text-[11px] font-mono text-slate-700 mb-2 font-bold">ID: 75B24V7B4Z3T</div>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
                 </div>
 
                 <!-- Cert 10 -->
-                <div class="p-6 rounded-2xl glass-card js-tilt" data-tilt data-tilt-max="8">
+                <div class="p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-xs font-mono text-gold-700 font-bold mb-1">IBM • Issued May 2025</div>
                     <h3 class="font-bold text-slate-900 text-base mb-2">IBM Python for Data Science and AI</h3>
-                    <p class="text-xs text-slate-500 mb-4">Skills: Python Data Science, APIs, JSON &amp; Data Analysis.</p>
-                    <div class="text-xs text-emerald-700 font-mono flex items-center gap-1.5 pt-3 border-t border-slate-100 font-semibold">
+                    <p class="text-xs text-slate-600 mb-4">Skills: Python Data Science, APIs, JSON &amp; Data Analysis.</p>
+                    <div class="text-xs text-emerald-800 font-mono flex items-center gap-1.5 pt-3 border-t border-amber-200/50 font-bold">
                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                         <span>Verified Credential</span>
                     </div>
@@ -578,7 +613,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl glass-card">
+                <div class="p-6 rounded-2xl glass-card-layered">
                     <div class="flex items-center gap-3 mb-4 text-gold-700 font-bold">
                         <i data-lucide="server" class="w-6 h-6"></i>
                         <h3 class="text-lg text-slate-900">Backend &amp; APIs</h3>
@@ -592,7 +627,7 @@
                     </ul>
                 </div>
 
-                <div class="p-6 rounded-2xl glass-card">
+                <div class="p-6 rounded-2xl glass-card-layered">
                     <div class="flex items-center gap-3 mb-4 text-purple-700 font-bold">
                         <i data-lucide="cpu" class="w-6 h-6"></i>
                         <h3 class="text-lg text-slate-900">AI &amp; RAG Systems</h3>
@@ -606,7 +641,7 @@
                     </ul>
                 </div>
 
-                <div class="p-6 rounded-2xl glass-card">
+                <div class="p-6 rounded-2xl glass-card-layered">
                     <div class="flex items-center gap-3 mb-4 text-sky-700 font-bold">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                         <h3 class="text-lg text-slate-900">Cloud &amp; Security</h3>
@@ -624,7 +659,7 @@
 
         <!-- CONTACT SECTION -->
         <section id="contact" class="py-28 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center border-t border-gold-200/70 scrub-section">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-50 border border-gold-300 text-gold-800 text-xs font-mono mb-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-gold-50 to-amber-100 border border-gold-300 text-gold-900 text-xs font-mono mb-6 shadow-sm">
                 <span>CONNECT WITH ME</span>
             </div>
             <h2 class="text-4xl sm:text-6xl font-black text-slate-900 mb-6">Let's Build Something High-Impact.</h2>
@@ -633,11 +668,11 @@
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-5">
-                <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="px-8 py-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold hover:from-gold-700 hover:to-gold-600 transition-all flex items-center gap-3 shadow-xl shadow-gold-500/20 text-base">
+                <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="px-8 py-4 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-bold hover:brightness-110 transition-all flex items-center gap-3 shadow-xl shadow-gold-500/25 text-base">
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                     <span>Connect on LinkedIn</span>
                 </a>
-                <a href="https://github.com/aditya-9-6" target="_blank" class="px-8 py-4 rounded-xl glass-card text-slate-800 font-semibold hover:bg-white transition-all flex items-center gap-3 text-base shadow-sm">
+                <a href="https://github.com/aditya-9-6" target="_blank" class="px-8 py-4 rounded-xl glass-card-layered text-slate-800 font-semibold hover:bg-white transition-all flex items-center gap-3 text-base shadow-sm">
                     <i data-lucide="github" class="w-5 h-5"></i>
                     <span>Explore GitHub</span>
                 </a>
@@ -655,17 +690,17 @@
 
     </div>
 
-    <!-- 3D Dense Particle Background & GSAP Scroll-Scrubbed Animation Script -->
+    <!-- 3D Ultra-Dense Particle Field (4,800 Nodes) & GSAP Scroll-Scrubbed Animation Script -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Initialize VanillaTilt for 3D Glass Cards
+        // Initialize VanillaTilt for 3D Layered Glass Cards
         VanillaTilt.init(document.querySelectorAll(".js-tilt"), {
             max: 8,
             speed: 400,
             glare: true,
-            "max-glare": 0.15,
+            "max-glare": 0.12,
             scale: 1.01
         });
 
@@ -703,7 +738,7 @@
             );
         });
 
-        // Three.js Interactive Ultra-Dense Gold & Obsidian Particle Field
+        // Three.js Interactive Ultra-Dense Gold & Obsidian Particle Field (4,800 Dots)
         const canvas = document.getElementById('webgl-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -712,22 +747,22 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        // Create 2,200 Interactive Particles
-        const particleCount = 2200;
+        // Create 4,800 Interactive Particles
+        const particleCount = 4800;
         const geometry = new THREE.BufferGeometry();
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
 
         const colorGold = new THREE.Color(0xd97706);
         const colorAmber = new THREE.Color(0xfbbf24);
-        const colorChampagne = new THREE.Color(0xf59e0b);
+        const colorChampagne = new THREE.Color(0xfde68a);
         const colorDark = new THREE.Color(0x1e293b);
-        const colorMuted = new THREE.Color(0x64748b);
+        const colorMuted = new THREE.Color(0x475569);
 
         for (let i = 0; i < particleCount * 3; i += 3) {
-            positions[i] = (Math.random() - 0.5) * 32;
-            positions[i + 1] = (Math.random() - 0.5) * 32;
-            positions[i + 2] = (Math.random() - 0.5) * 32;
+            positions[i] = (Math.random() - 0.5) * 36;
+            positions[i + 1] = (Math.random() - 0.5) * 36;
+            positions[i + 2] = (Math.random() - 0.5) * 36;
 
             const rand = Math.random();
             let selectedColor;
@@ -735,9 +770,9 @@
                 selectedColor = colorGold;
             } else if (rand > 0.45) {
                 selectedColor = colorAmber;
-            } else if (rand > 0.30) {
+            } else if (rand > 0.28) {
                 selectedColor = colorChampagne;
-            } else if (rand > 0.15) {
+            } else if (rand > 0.14) {
                 selectedColor = colorDark;
             } else {
                 selectedColor = colorMuted;
@@ -752,10 +787,10 @@
         geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.058,
+            size: 0.052,
             vertexColors: true,
             transparent: true,
-            opacity: 0.62
+            opacity: 0.7
         });
 
         const particles = new THREE.Points(geometry, material);
@@ -767,8 +802,8 @@
         let mouseX = 0;
         let mouseY = 0;
         window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.45;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.45;
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.5;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5;
         });
 
         // 3D Scroll Scrubbing
@@ -783,9 +818,9 @@
             const elapsedTime = clock.getElapsedTime();
 
             // Dynamic rotation based on time + scroll scrub
-            particles.rotation.y = elapsedTime * 0.035 + mouseX + (scrollYPos * 0.001);
-            particles.rotation.x = elapsedTime * 0.018 + mouseY + (scrollYPos * 0.0005);
-            particles.position.y = -(scrollYPos * 0.0032);
+            particles.rotation.y = elapsedTime * 0.038 + mouseX + (scrollYPos * 0.001);
+            particles.rotation.x = elapsedTime * 0.02 + mouseY + (scrollYPos * 0.0005);
+            particles.position.y = -(scrollYPos * 0.0034);
 
             renderer.render(scene, camera);
         }
