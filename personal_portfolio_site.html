@@ -47,7 +47,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -167,7 +167,7 @@
     <!-- Scroll Progress Indicator -->
     <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-    <!-- 3D Three.js Interactive Dense Particle Canvas (4,800+ nodes) -->
+    <!-- 3D Three.js Interactive Dense Particle Canvas -->
     <canvas id="webgl-canvas"></canvas>
 
     <!-- Content Wrapper -->
@@ -208,7 +208,7 @@
                 
                 <!-- Status Badge -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-gold-50 via-amber-50 to-orange-50 border border-gold-300/80 text-gold-900 text-[11px] sm:text-xs font-mono shadow-sm self-start">
-                    <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span>CREATOR OF SPRYZEN • OPEN SOURCE SYSTEMS BUILDER</span>
                 </div>
 
@@ -293,7 +293,7 @@
 
             <!-- Main Spryzen Feature Card -->
             <div class="rounded-3xl p-6 sm:p-10 glass-card-flagship mb-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
                     <div class="lg:col-span-7 flex flex-col gap-5">
                         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
@@ -333,13 +333,18 @@
                             </div>
                         </div>
 
-                        <!-- Benchmark Repository Action Link -->
+                        <!-- Expandable Architecture Button -->
                         <div class="pt-4 flex flex-wrap items-center gap-3">
                             <a href="https://github.com/Aditya-9-6/Spryzen-Benchmarks" target="_blank" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-gold-600 text-white font-bold hover:brightness-110 transition-all flex items-center gap-2 shadow-md shadow-amber-600/25 text-sm sm:text-base">
                                 <i data-lucide="github" class="w-4 h-4"></i>
                                 <span>Inspect Spryzen-Benchmarks Repo</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </a>
+                            <button id="toggle-spryzen-details" class="px-6 py-3.5 rounded-xl bg-white/80 border border-gold-300 text-gold-800 font-bold hover:bg-white transition-all flex items-center gap-2 shadow-sm text-sm sm:text-base">
+                                <i data-lucide="info" class="w-4 h-4"></i>
+                                <span id="toggle-spryzen-text">Read Architecture Breakdown</span>
+                                <i data-lucide="chevron-down" id="toggle-spryzen-chevron" class="w-4 h-4 transition-transform duration-300"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -385,6 +390,37 @@
                     </div>
 
                 </div>
+
+                <!-- EXPANDABLE PANEL CONTENT (Spryzen Architecture details) -->
+                <div id="spryzen-details-panel" class="hidden mt-8 pt-8 border-t border-gold-300/60 transition-all duration-500 ease-in-out">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-800 text-sm">
+                        <div class="space-y-4">
+                            <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-gold-600"></span>
+                                Core Problem &amp; Solution
+                            </h4>
+                            <p class="leading-relaxed">
+                                Standard edge security appliances inspect traffic by decrypting full SSL/TLS handshakes. This is extremely CPU-expensive, introducing high latency and limiting edge capacity.
+                            </p>
+                            <p class="leading-relaxed font-semibold text-gold-900">
+                                Spryzen solves this by doing single-pass byte matching on raw incoming packet headers. It parses the Client Hello directly to compute JA4 fingerprint hashes in real-time, allowing instant anomaly scoring without full decryption.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-gold-600"></span>
+                                Why it is Extremely Fast
+                            </h4>
+                            <ul class="space-y-2">
+                                <li>• <strong>Zero Heap Allocations:</strong> Audio streams and network byte arrays are parsed directly as stack-allocated slices. Spryzen has 0 dynamic memory allocations in the packet wire path.</li>
+                                <li>• <strong>Lock-Free Concurrency:</strong> Ingestion and thread scheduling utilize lock-free ring buffers (atomic structures) to prevent CPU thread context switching and thread locks.</li>
+                                <li>• <strong>P99 Latency of 207ns:</strong> Optimized assembly-level memory copies keep kernel packet ingestion time under a fraction of a microsecond.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -826,6 +862,35 @@
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+
+        // Spryzen Expand Panel Toggle Script
+        const toggleBtn = document.getElementById('toggle-spryzen-details');
+        const detailsPanel = document.getElementById('spryzen-details-panel');
+        const toggleText = document.getElementById('toggle-spryzen-text');
+        const toggleChevron = document.getElementById('toggle-spryzen-chevron');
+
+        toggleBtn.addEventListener('click', () => {
+            const isHidden = detailsPanel.classList.contains('hidden');
+            if (isHidden) {
+                detailsPanel.classList.remove('hidden');
+                toggleText.innerText = "Hide Architecture Breakdown";
+                toggleChevron.style.transform = "rotate(180deg)";
+                // Trigger reflow & GSAP fade in
+                gsap.fromTo(detailsPanel, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+            } else {
+                gsap.to(detailsPanel, { 
+                    opacity: 0, 
+                    y: -20, 
+                    duration: 0.3, 
+                    ease: "power2.in", 
+                    onComplete: () => {
+                        detailsPanel.classList.add('hidden');
+                        toggleText.innerText = "Read Architecture Breakdown";
+                        toggleChevron.style.transform = "rotate(0deg)";
+                    } 
+                });
+            }
+        });
 
         // Initialize VanillaTilt for 3D Layered Glass Cards (Desktop only)
         if (window.matchMedia("(hover: hover)").matches) {
