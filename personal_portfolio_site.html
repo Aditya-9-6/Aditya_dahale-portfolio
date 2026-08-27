@@ -181,7 +181,7 @@
                     <span>ADITYA<span class="text-gold-600">.</span>DAHALE</span>
                 </a>
                 <div class="hidden md:flex items-center gap-8 text-sm font-mono text-slate-600 font-medium">
-                    <a href="#spryzen" class="text-gold-700 font-bold hover:text-gold-600 transition-colors">// Spryzen (4.8M RPS)</a>
+                    <a href="#spryzen" class="text-gold-700 font-bold hover:text-gold-600 transition-colors">// Spryzen (118.5k RPS)</a>
                     <a href="#opensource" class="hover:text-gold-600 transition-colors">// Open Source PRs</a>
                     <a href="#projects" class="hover:text-gold-600 transition-colors">// Projects</a>
                     <a href="#internships" class="hover:text-gold-600 transition-colors">// Internships</a>
@@ -235,7 +235,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4 w-full sm:w-auto">
                     <a href="#spryzen" class="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-bold text-center flex items-center justify-center gap-2.5 shadow-lg shadow-gold-500/25 text-sm sm:text-base">
                         <i data-lucide="zap" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                        <span>Explore Spryzen Engine (4.8M RPS)</span>
+                        <span>Explore Spryzen Engine (118.5k RPS)</span>
                     </a>
                     <div class="flex items-center gap-3 w-full sm:w-auto">
                         <a href="https://github.com/Aditya-9-6/Spryzen-Benchmarks" target="_blank" class="flex-1 sm:flex-none px-5 py-3.5 rounded-xl glass-card-layered text-slate-800 font-semibold text-center flex items-center justify-center gap-2 shadow-sm text-sm sm:text-base">
@@ -439,6 +439,46 @@
 
             <div class="grid grid-cols-1 gap-6 sm:gap-8">
                 
+                
+                <!-- Merged PR: FoxIO-LLC / ja4 #312 -->
+                <a href="https://github.com/FoxIO-LLC/ja4/pull/312" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #312
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">FoxIO-LLC / ja4 (Official Standard)</div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>rust/ja4: eliminate temporary String allocations during HTTP/1 header filtering</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Contributed zero-allocation memory optimizations to FoxIO's official industry-standard JA4 Network Fingerprinting suite in Rust. Replaced dynamic string splitting in HTTP/1 header filtering with zero-allocation <code>name.eq_ignore_ascii_case()</code> stack checks, and eliminated intermediate <code>Vec&lt;String&gt;</code> allocations during JA4T TCP options formatting.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">JA4 Network Standard</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Zero-Allocation Rust</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">HTTP/1 & JA4T</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #312 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- Merged PR 1: smoltcp-rs #1194 -->
                 <a href="https://github.com/smoltcp-rs/smoltcp/pull/1194" target="_blank" class="block group">
                     <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
@@ -849,7 +889,7 @@
             <div class="mt-16 sm:mt-24 pt-6 sm:pt-8 border-t border-slate-200 text-xs text-slate-500 font-mono flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div>© 2026 ADITYA DAHALE. All Rights Reserved.</div>
                 <div class="flex items-center gap-4 sm:gap-6">
-                    <a href="#spryzen" class="hover:text-gold-700">Spryzen (4.8M RPS)</a>
+                    <a href="#spryzen" class="hover:text-gold-700">Spryzen (118.5k RPS)</a>
                     <a href="#opensource" class="hover:text-gold-700">Open Source PRs</a>
                     <a href="https://github.com/aditya-9-6" target="_blank" class="hover:text-gold-700">GitHub</a>
                 </div>
