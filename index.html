@@ -224,7 +224,7 @@
 
                 <!-- Subtitle -->
                 <p class="text-lg sm:text-2xl text-slate-700 font-normal leading-snug sm:leading-relaxed">
-                    Creator of <strong class="text-gold-700 font-semibold">Spryzen</strong> (118.5k RPS Sovereign Threat Engine), open-source contributor (<span class="font-mono text-slate-900 font-medium">ja4</span>, <span class="font-mono text-slate-900 font-medium">smoltcp</span>, <span class="font-mono text-slate-900 font-medium">smartcore</span>, <span class="font-mono text-slate-900 font-medium">maxminddb</span>), and AI/Systems architect.
+                    Creator of <strong class="text-gold-700 font-semibold">Spryzen</strong> (4.83M RPS Network Engine), open-source contributor (<span class="font-mono text-slate-900 font-medium">FoxIO JA4</span>, <span class="font-mono text-slate-900 font-medium">smoltcp</span>, <span class="font-mono text-slate-900 font-medium">smartcore</span>, <span class="font-mono text-slate-900 font-medium">maxminddb</span>), and AI/RAG architect.
                 </p>
 
                 <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
@@ -254,14 +254,14 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 w-full mt-12 sm:mt-20">
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-flagship js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-[10px] sm:text-xs font-mono text-gold-800 font-bold uppercase tracking-wider mb-1 sm:mb-2">Flagship Engine</div>
-                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">118.5k RPS</div>
-                    <div class="text-[11px] sm:text-xs text-gold-900 font-medium mt-1 sm:mt-2">0.38ms P99 (18µs TTFB)</div>
+                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">4.83M RPS</div>
+                    <div class="text-[11px] sm:text-xs text-gold-900 font-medium mt-1 sm:mt-2">0.207µs P99 Latency</div>
                 </div>
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-[10px] sm:text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-1 sm:mb-2">Open Source</div>
-                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">4x Merged</div>
-                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">ja4, smoltcp, smartcore, maxminddb</div>
+                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">5x Merged</div>
+                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">ja4 (2x), smoltcp, smartcore, maxminddb</div>
                 </div>
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
@@ -474,6 +474,45 @@
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
                                 View PR #312 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Merged PR: FoxIO-LLC / ja4 #314 -->
+                <a href="https://github.com/FoxIO-LLC/ja4/pull/314" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #314
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">FoxIO-LLC / ja4 (Official Standard)</div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>perf(rust): optimize hash12 by directly hex-encoding 6-byte digest slices in ja4 and ja4x</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Optimized the core <code>hash12</code> helper function in both the <code>ja4</code> and <code>ja4x</code> Rust crates. Directly hex-encodes 6-byte digest slices instead of encoding all 32 bytes into a 64-character heap string and slicing, eliminating 2 dynamic heap allocations and avoiding encoding 26 unused trailing bytes on every fingerprint calculation.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">JA4 / JA4X Standard</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Zero-Allocation Rust</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">SHA-256 Digest Optimization</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #314 on GitHub →
                             </span>
                         </div>
                     </div>
