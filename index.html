@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>ADITYA DAHALE | Systems & AI Software Engineer</title>
-    <meta name="description" content="Portfolio of Aditya Dahale - Creator of Spryzen (4.83M RPS Network Engine), Open Source Contributor (tokio, FoxIO ja4, smoltcp, smartcore, maxminddb-rust), with verified AWS & IBM credentials.">
+    <meta name="description" content="Portfolio of Aditya Dahale - Creator of Spryzen (4.83M RPS Network Engine), Open Source Contributor (Cloudflare Pingora, tokio, Astral uv, Google, FoxIO ja4, smoltcp), with verified AWS & IBM credentials.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -98,7 +98,7 @@
             border: 2px solid rgba(217, 119, 6, 0.45);
             box-shadow: 0 25px 60px -15px rgba(217, 119, 6, 0.2), 
                         inset 0 1px 3px rgba(255, 255, 255, 1),
-                        inset 0 -3px 8px rgba(251, 191, 36, 0.2);
+                        inset 0 -1px 2px rgba(217, 119, 6, 0.1);
             transform-style: preserve-3d;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -111,42 +111,40 @@
             }
         }
 
-        /* Specific Purple-Gold Layered Tint for PRs */
+        /* Merged PR Cards */
         .glass-card-pr {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(243, 232, 255, 0.45) 50%, rgba(254, 243, 199, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(254, 243, 199, 0.4) 50%, rgba(255, 251, 235, 0.9) 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(147, 51, 234, 0.25);
-            box-shadow: 0 15px 35px -12px rgba(147, 51, 234, 0.1), 
-                        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(217, 119, 6, 0.25);
+            box-shadow: 0 12px 30px -10px rgba(180, 83, 9, 0.08);
             transform-style: preserve-3d;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s ease;
         }
         @media (hover: hover) {
             .glass-card-pr:hover {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 232, 255, 0.65) 50%, rgba(254, 243, 199, 0.55) 100%);
-                border-color: rgba(147, 51, 234, 0.6);
-                box-shadow: 0 25px 50px -10px rgba(147, 51, 234, 0.22);
-                transform: translateY(-4px);
+                border-color: rgba(217, 119, 6, 0.7);
+                box-shadow: 0 20px 40px -10px rgba(180, 83, 9, 0.2);
+                transform: translateY(-3px);
             }
         }
 
-        /* Specific Amethyst-Gold Layered Tint for Internships */
-        .glass-card-internship {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(238, 242, 255, 0.5) 45%, rgba(254, 243, 199, 0.35) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            box-shadow: 0 15px 35px -12px rgba(99, 102, 241, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.95);
-            transform-style: preserve-3d;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
+        /* Gold Gradient Text */
         .gold-gradient-text {
-            background: linear-gradient(135deg, #0f172a 0%, #b45309 50%, #d97706 100%);
+            background: linear-gradient(135deg, #78350f 0%, #b45309 30%, #d97706 70%, #92400e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* Code Block Styling */
+        .code-window {
+            background: #090d16;
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Scroll Progress Bar */
         .scroll-progress-bar {
             position: fixed;
             top: 0;
@@ -183,7 +181,7 @@
 
                 <div class="hidden lg:flex items-center gap-5 xl:gap-8 text-xs xl:text-sm font-mono text-slate-600 font-medium whitespace-nowrap">
                     <a href="#spryzen" class="text-gold-700 font-bold hover:text-gold-600 transition-colors whitespace-nowrap">// Spryzen (4.83M RPS)</a>
-                    <a href="#opensource" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Open Source (6x)</a>
+                    <a href="#opensource" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Open Source (Tier-1 PRs)</a>
                     <a href="#projects" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Projects</a>
                     <a href="#internships" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Internships</a>
                     <a href="#certifications" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Certifications</a>
@@ -215,7 +213,7 @@
                 <!-- Status Badge -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-gold-50 via-amber-50 to-orange-50 border border-gold-300/80 text-gold-900 text-[11px] sm:text-xs font-mono shadow-sm self-start">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>CREATOR OF SPRYZEN • OPEN SOURCE SYSTEMS BUILDER</span>
+                    <span>CREATOR OF SPRYZEN • TIER-1 SYSTEMS CONTRIBUTOR</span>
                 </div>
 
                 <!-- Name Headline -->
@@ -230,7 +228,7 @@
 
                 <!-- Subtitle -->
                 <p class="text-lg sm:text-2xl text-slate-700 font-normal leading-snug sm:leading-relaxed">
-                    Creator of <strong class="text-gold-700 font-semibold">Spryzen</strong> (4.83M RPS Network Engine), open-source contributor (<strong class="font-mono text-amber-800 font-bold">tokio</strong>, <span class="font-mono text-slate-900 font-medium">FoxIO JA4</span>, <span class="font-mono text-slate-900 font-medium">smoltcp</span>, <span class="font-mono text-slate-900 font-medium">smartcore</span>, <span class="font-mono text-slate-900 font-medium">maxminddb</span>), and AI/RAG architect.
+                    Creator of <strong class="text-gold-700 font-semibold">Spryzen+</strong> (4.83M RPS, 27ns WAF Engine), open-source contributor (<strong class="font-mono text-amber-800 font-bold">Cloudflare Pingora</strong>, <strong class="font-mono text-amber-800 font-bold">tokio</strong>, <strong class="font-mono text-amber-800 font-bold">Astral uv</strong>, <strong class="font-mono text-amber-800 font-bold">Google</strong>, <span class="font-mono text-slate-900 font-medium">FoxIO JA4</span>, <span class="font-mono text-slate-900 font-medium">smoltcp</span>), and AI/RAG architect.
                 </p>
 
                 <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
@@ -376,8 +374,16 @@
                                     <span class="text-emerald-400 font-bold">0.207 µs (207 ns)</span>
                                 </div>
                                 <div class="flex justify-between text-slate-300">
+                                    <span>WAF Fast-Path:</span>
+                                    <span class="text-emerald-400 font-bold">27.99 ns (0 allocs)</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Risky Char Scan:</span>
+                                    <span class="text-amber-300 font-bold">0.00 ns (O(1) 256B LUT)</span>
+                                </div>
+                                <div class="flex justify-between text-slate-300">
                                     <span>Heap Allocations:</span>
-                                    <span class="text-sky-400 font-bold">0 allocs/op</span>
+                                    <span class="text-sky-400 font-bold">0 allocs/op (Cow zero-copy)</span>
                                 </div>
                                 <div class="flex justify-between text-slate-300">
                                     <span>Core Utilization:</span>
@@ -437,14 +443,59 @@
                     <i data-lucide="git-merge" class="w-4 h-4 text-purple-600"></i>
                     <span>// Verified Open-Source Proof of Work</span>
                 </div>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Merged Pull Requests</h2>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Tier-1 Systems Open-Source Contributions</h2>
                 <p class="text-slate-600 max-w-2xl text-sm sm:text-base">
-                    Click any pull request card below to directly inspect the merged code on GitHub.
+                    Click any pull request card below to directly inspect the production code and verified green CI test matrices on GitHub.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 gap-6 sm:gap-8">
                 
+                <!-- Flagship PR: Cloudflare / pingora #996 -->
+                <a href="https://github.com/cloudflare/pingora/pull/996" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
+                            ★ Tier-1 Cloudflare Core Proxy
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #996
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
+                                        <span>cloudflare / pingora (L4/L7 Async Reverse Proxy — 22,000+ ★)</span>
+                                    </div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>fix(proxy): return 504 for upstream timeouts in fail_to_proxy per RFC 9110</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
+                                100% Green CI (4/4 Passed)
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Resolved Issue #980 in Cloudflare's flagship Pingora reverse proxy. Previously, Pingora mapped all upstream errors including timeouts (connect, TLS handshake, read, and write) to generic <code>502 Bad Gateway</code>. Extracted <code>default_fail_to_proxy_status</code> to properly return <strong><code>504 Gateway Timeout</code></strong> per RFC 9110 §15.6.6 while preserving 502 for broken upstreams, passing Pingora's MSRV, stable, nightly, and Semgrep CI suites.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Cloudflare Pingora</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">RFC 9110 §15.6.6</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Reverse Proxy Error Handling</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Zero-Allocation Status Mapping</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #996 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- Merged PR: tokio-rs / tokio #8405 (FLAGSHIP CONCURRENCY FIX) -->
                 <a href="https://github.com/tokio-rs/tokio/pull/8405" target="_blank" class="block group">
                     <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
@@ -485,6 +536,96 @@
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
                                 View PR #8405 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tier-1 PR: astral-sh / uv #21457 -->
+                <a href="https://github.com/astral-sh/uv/pull/21457" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
+                            ★ Tier-1 Astral Toolchain
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #21457
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
+                                        <span>astral-sh / uv (Fast Python Package Manager in Rust — 45,000+ ★)</span>
+                                    </div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>feat(locks): thread lock timeouts via EnvironmentOptions for cross-process synchronization</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
+                                100% Green CI (55/55 Passed)
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Resolved cross-process lock timeout propagation across Astral's entire workspace toolchain (#14720). Decoupled raw lock acquisition from static timeouts by threading configurable timeout parameters through <code>EnvironmentOptions</code>. Passed all 55 matrix CI test suites across 11 distinct OS/architecture configurations (Linux, Windows, macOS, Android, FreeBSD) with zero Clippy or Hawk warnings.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Astral uv Core</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Cross-Process File Locks</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">55 Matrix CI Suites</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Thread-Safe Synchronization</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #21457 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tier-1 PR: google / comprehensive-rust #3275 -->
+                <a href="https://github.com/google/comprehensive-rust/pull/3275" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
+                            ★ Tier-1 Google Courseware
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #3275
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
+                                        <span>google / comprehensive-rust (Google Official Rust Courseware — 28,000+ ★)</span>
+                                    </div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>unsafe: accurately demonstrate Undefined Behavior using i32::unchecked_add</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
+                                100% Green CI (CLA Signed)
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Accurately modeled language-level Undefined Behavior in Google's official Rust courseware (#3122). Replaced benign wrapped arithmetic with intrinsic <code>i32::unchecked_add</code>, aligning pedagogical instruction directly with LLVM's integer overflow semantics per Google Staff Engineer design review.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Google Rust Course</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Unsafe Rust Semantics</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">LLVM Undefined Behavior</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">CLA Signed</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #3275 on GitHub →
                             </span>
                         </div>
                     </div>
