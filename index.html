@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>ADITYA DAHALE | Systems & AI Software Engineer</title>
-    <meta name="description" content="Portfolio of Aditya Dahale - Creator of Spryzen (4.83M RPS Network Engine), Open Source Contributor (Cloudflare Pingora, tokio, Astral uv, Google, FoxIO ja4, smoltcp), with verified AWS & IBM credentials.">
+    <meta name="description" content="Portfolio of Aditya Dahale - Creator of Spryzen (4.83M RPS Network Engine), Open Source Contributor (Bytecode Alliance Wasmtime, Tokio, Foundry, smoltcp, FoxIO JA4), with verified AWS & IBM credentials.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -98,7 +98,7 @@
             border: 2px solid rgba(217, 119, 6, 0.45);
             box-shadow: 0 25px 60px -15px rgba(217, 119, 6, 0.2), 
                         inset 0 1px 3px rgba(255, 255, 255, 1),
-                        inset 0 -1px 2px rgba(217, 119, 6, 0.1);
+                        inset 0 -3px 8px rgba(251, 191, 36, 0.2);
             transform-style: preserve-3d;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -111,40 +111,42 @@
             }
         }
 
-        /* Merged PR Cards */
+        /* Specific Purple-Gold Layered Tint for PRs */
         .glass-card-pr {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(254, 243, 199, 0.4) 50%, rgba(255, 251, 235, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(243, 232, 255, 0.45) 50%, rgba(254, 243, 199, 0.4) 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(217, 119, 6, 0.25);
-            box-shadow: 0 12px 30px -10px rgba(180, 83, 9, 0.08);
+            border: 1px solid rgba(147, 51, 234, 0.25);
+            box-shadow: 0 15px 35px -12px rgba(147, 51, 234, 0.1), 
+                        inset 0 1px 2px rgba(255, 255, 255, 0.95);
             transform-style: preserve-3d;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @media (hover: hover) {
             .glass-card-pr:hover {
-                border-color: rgba(217, 119, 6, 0.7);
-                box-shadow: 0 20px 40px -10px rgba(180, 83, 9, 0.2);
-                transform: translateY(-3px);
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 232, 255, 0.65) 50%, rgba(254, 243, 199, 0.55) 100%);
+                border-color: rgba(147, 51, 234, 0.6);
+                box-shadow: 0 25px 50px -10px rgba(147, 51, 234, 0.22);
+                transform: translateY(-4px);
             }
         }
 
-        /* Gold Gradient Text */
+        /* Specific Amethyst-Gold Layered Tint for Internships */
+        .glass-card-internship {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(238, 242, 255, 0.5) 45%, rgba(254, 243, 199, 0.35) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            box-shadow: 0 15px 35px -12px rgba(99, 102, 241, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+            transform-style: preserve-3d;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
         .gold-gradient-text {
-            background: linear-gradient(135deg, #78350f 0%, #b45309 30%, #d97706 70%, #92400e 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #b45309 50%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Code Block Styling */
-        .code-window {
-            background: #090d16;
-            border: 1px solid rgba(251, 191, 36, 0.25);
-            border-radius: 16px;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Scroll Progress Bar */
         .scroll-progress-bar {
             position: fixed;
             top: 0;
@@ -172,35 +174,29 @@
     <div class="relative z-10 w-full overflow-hidden">
 
         <!-- Navigation Bar -->
-        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gold-200/70 shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
-                <a href="#" class="font-mono font-extrabold text-base sm:text-xl tracking-wider text-slate-900 flex items-center gap-2 group shrink-0">
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-xl border-b border-gold-200/70 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+                <a href="#" class="font-mono font-extrabold text-lg sm:text-xl tracking-wider text-slate-900 flex items-center gap-2 group">
                     <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-gold-100 to-amber-200 border border-gold-300 flex items-center justify-center text-gold-700 font-bold group-hover:rotate-12 transition-transform shadow-inner text-sm sm:text-base">⚡</span>
-                    <span class="whitespace-nowrap">ADITYA<span class="text-gold-600">.</span>DAHALE</span>
+                    <span>ADITYA<span class="text-gold-600">.</span>DAHALE</span>
                 </a>
-
-                <div class="hidden lg:flex items-center gap-5 xl:gap-8 text-xs xl:text-sm font-mono text-slate-600 font-medium whitespace-nowrap">
-                    <a href="#spryzen" class="text-gold-700 font-bold hover:text-gold-600 transition-colors whitespace-nowrap">// Spryzen (4.83M RPS)</a>
-                    <a href="#opensource" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Open Source (Tier-1 PRs)</a>
-                    <a href="#projects" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Projects</a>
-                    <a href="#internships" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Internships</a>
-                    <a href="#certifications" class="hover:text-gold-600 transition-colors whitespace-nowrap">// Certifications</a>
+                <div class="hidden md:flex items-center gap-8 text-sm font-mono text-slate-600 font-medium">
+                    <a href="#spryzen" class="text-gold-700 font-bold hover:text-gold-600 transition-colors">// Spryzen (118.5k RPS)</a>
+                    <a href="#opensource" class="hover:text-gold-600 transition-colors">// Open Source PRs</a>
+                    <a href="#projects" class="hover:text-gold-600 transition-colors">// Projects</a>
+                    <a href="#internships" class="hover:text-gold-600 transition-colors">// Internships</a>
+                    <a href="#certifications" class="hover:text-gold-600 transition-colors">// Certifications</a>
                 </div>
-
-                <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-                    <a href="https://github.com/aditya-9-6" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all flex items-center justify-center" title="GitHub">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="https://github.com/aditya-9-6" target="_blank" class="p-2 sm:p-2.5 rounded-xl bg-white/90 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="GitHub">
+                        <i data-lucide="github" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all flex items-center justify-center" title="LinkedIn">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://www.linkedin.com/in/aditya-dahale-207208aditya" target="_blank" class="p-2 sm:p-2.5 rounded-xl bg-white/90 border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-600 shadow-sm transition-all" title="LinkedIn">
+                        <i data-lucide="linkedin" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                     </a>
-                    <a href="Aditya_Dahale_Resume.pdf" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-slate-200 hover:border-gold-400 text-slate-700 hover:text-gold-700 font-mono text-xs font-semibold shadow-sm transition-all" title="Download Resume PDF">
-                        <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        <span>Resume</span>
-                    </a>
-                    <a href="#contact" class="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-semibold shadow-md shadow-gold-500/25 text-xs sm:text-sm transition-all whitespace-nowrap">
+                    <a href="#contact" class="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-gold-600 via-amber-600 to-gold-500 text-white font-semibold shadow-md shadow-gold-500/25 text-xs sm:text-sm transition-all">
                         <span>Contact</span>
-                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-current" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                     </a>
                 </div>
             </div>
@@ -213,7 +209,7 @@
                 <!-- Status Badge -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-gold-50 via-amber-50 to-orange-50 border border-gold-300/80 text-gold-900 text-[11px] sm:text-xs font-mono shadow-sm self-start">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>CREATOR OF SPRYZEN • TIER-1 SYSTEMS CONTRIBUTOR</span>
+                    <span>CREATOR OF SPRYZEN • OPEN SOURCE SYSTEMS BUILDER</span>
                 </div>
 
                 <!-- Name Headline -->
@@ -228,7 +224,7 @@
 
                 <!-- Subtitle -->
                 <p class="text-lg sm:text-2xl text-slate-700 font-normal leading-snug sm:leading-relaxed">
-                    Creator of <strong class="text-gold-700 font-semibold">Spryzen+</strong> (4.83M RPS, 27ns WAF Engine), open-source contributor (<strong class="font-mono text-amber-800 font-bold">Cloudflare Pingora</strong>, <strong class="font-mono text-amber-800 font-bold">tokio</strong>, <strong class="font-mono text-amber-800 font-bold">Astral uv</strong>, <strong class="font-mono text-amber-800 font-bold">Google</strong>, <span class="font-mono text-slate-900 font-medium">FoxIO JA4</span>, <span class="font-mono text-slate-900 font-medium">smoltcp</span>), and AI/RAG architect.
+                    Creator of <strong class="text-gold-700 font-semibold">Spryzen</strong> (4.83M RPS Network Engine), open-source contributor (<span class="font-mono text-slate-900 font-medium">Bytecode Alliance Wasmtime</span>, <span class="font-mono text-slate-900 font-medium">Tokio</span>, <span class="font-mono text-slate-900 font-medium">Foundry</span>, <span class="font-mono text-slate-900 font-medium">FoxIO JA4</span>, <span class="font-mono text-slate-900 font-medium">smoltcp</span>), and AI/RAG architect.
                 </p>
 
                 <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
@@ -264,8 +260,8 @@
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-[10px] sm:text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-1 sm:mb-2">Open Source</div>
-                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">6x Merged</div>
-                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">tokio, ja4 (2x), smoltcp, smartcore, maxminddb</div>
+                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">10x Merged</div>
+                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Wasmtime, Tokio, Foundry, Corrosion, JA4, smoltcp</div>
                 </div>
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
@@ -374,16 +370,8 @@
                                     <span class="text-emerald-400 font-bold">0.207 µs (207 ns)</span>
                                 </div>
                                 <div class="flex justify-between text-slate-300">
-                                    <span>WAF Fast-Path:</span>
-                                    <span class="text-emerald-400 font-bold">27.99 ns (0 allocs)</span>
-                                </div>
-                                <div class="flex justify-between text-slate-300">
-                                    <span>Risky Char Scan:</span>
-                                    <span class="text-amber-300 font-bold">0.00 ns (O(1) 256B LUT)</span>
-                                </div>
-                                <div class="flex justify-between text-slate-300">
                                     <span>Heap Allocations:</span>
-                                    <span class="text-sky-400 font-bold">0 allocs/op (Cow zero-copy)</span>
+                                    <span class="text-sky-400 font-bold">0 allocs/op</span>
                                 </div>
                                 <div class="flex justify-between text-slate-300">
                                     <span>Core Utilization:</span>
@@ -443,96 +431,85 @@
                     <i data-lucide="git-merge" class="w-4 h-4 text-purple-600"></i>
                     <span>// Verified Open-Source Proof of Work</span>
                 </div>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Tier-1 Systems Open-Source Contributions</h2>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900">Merged Pull Requests</h2>
                 <p class="text-slate-600 max-w-2xl text-sm sm:text-base">
-                    Click any pull request card below to directly inspect the production code and verified green CI test matrices on GitHub.
+                    Click any pull request card below to directly inspect the merged code on GitHub.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 gap-6 sm:gap-8">
                 
-                <!-- Flagship PR: Cloudflare / pingora #996 -->
-                <a href="https://github.com/cloudflare/pingora/pull/996" target="_blank" class="block group">
-                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
-                            ★ Tier-1 Cloudflare Core Proxy
-                        </div>
+                <!-- Merged PR: Bytecode Alliance / wasmtime #14387 -->
+                <a href="https://github.com/bytecodealliance/wasmtime/pull/14387" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
-                                    #996
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #14387
                                 </div>
                                 <div>
-                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
-                                        <span>cloudflare / pingora (L4/L7 Async Reverse Proxy — 22,000+ ★)</span>
-                                    </div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">bytecodealliance / wasmtime (WebAssembly Standard Runtime)</div>
                                     <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
-                                        <span>fix(proxy): return 504 for upstream timeouts in fail_to_proxy per RFC 9110</span>
+                                        <span>wasi: stat symlinks with trailing slashes correctly in manual resolver</span>
                                         <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
-                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
-                                100% Green CI (4/4 Passed)
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR • Alex Crichton
                             </span>
                         </div>
 
                         <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
-                            <strong>What was achieved:</strong> Resolved Issue #980 in Cloudflare's flagship Pingora reverse proxy. Previously, Pingora mapped all upstream errors including timeouts (connect, TLS handshake, read, and write) to generic <code>502 Bad Gateway</code>. Extracted <code>default_fail_to_proxy_status</code> to properly return <strong><code>504 Gateway Timeout</code></strong> per RFC 9110 §15.6.6 while preserving 502 for broken upstreams, passing Pingora's MSRV, stable, nightly, and Semgrep CI suites.
+                            <strong>What was achieved:</strong> Resolved POSIX symlink dereference bug in WASI filesystem engine (<code>wasi-common</code>). When <code>stat</code>ing paths with a trailing slash where the final component is a symlink to a directory under <code>FollowSymlinks::No</code>, POSIX requires resolving the symlink because the trailing slash forces directory resolution. Implemented <code>stops_at_symlink</code> helper on <code>Context</code> and added test coverage across symlinked files and directories, preventing erroneous <code>ENOTDIR</code> failures. Merged into <code>main</code> by Alex Crichton &amp; Roman Volosatovs.
                         </p>
 
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
-                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Cloudflare Pingora</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">RFC 9110 §15.6.6</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Reverse Proxy Error Handling</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Zero-Allocation Status Mapping</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Bytecode Alliance</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Wasmtime / WASI</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">POSIX File Systems</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Rust Core</span>
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
-                                View PR #996 on GitHub →
+                                View PR #14387 on GitHub →
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Merged PR: tokio-rs / tokio #8405 (FLAGSHIP CONCURRENCY FIX) -->
+                <!-- Merged PR: tokio-rs / tokio #8405 -->
                 <a href="https://github.com/tokio-rs/tokio/pull/8405" target="_blank" class="block group">
-                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
-                            ★ Tier-1 Core Runtime
-                        </div>
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
                                     #8405
                                 </div>
                                 <div>
-                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
-                                        <span>tokio-rs / tokio (Official Rust Async Runtime — 27,000+ ★)</span>
-                                    </div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">tokio-rs / tokio (De Facto Rust Async Runtime)</div>
                                     <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
                                         <span>sync(semaphore): store permit count as usize to prevent overflow in merge</span>
                                         <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
-                                <i data-lucide="git-merge" class="w-3.5 h-3.5 text-purple-700"></i>
-                                Merged by Darksonn
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR • Alice Ryhl
                             </span>
                         </div>
 
                         <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
-                            <strong>What was achieved:</strong> Resolved a critical integer overflow and permanent permit-leak bug in Tokio's core concurrency synchronization primitives (<code>SemaphorePermit::merge</code> and <code>OwnedSemaphorePermit::merge</code>). Because permits were previously stored internally as <code>u32</code> while semaphores legitimately hold billions of permits (<code>usize::MAX &gt;&gt; 3</code>), merging permits exceeding <code>u32::MAX</code> (~4.29B) silently wrapped in release builds, causing semaphores to permanently lose permits upon drop. Converted internal storage to <code>usize</code>, implemented safe <code>checked_add</code> overflow protection with explicit panic invariants, and passed Tokio's Loom concurrency model tests, MSRV, and cross-platform CI matrices.
+                            <strong>What was achieved:</strong> Discovered and resolved a critical permit leak bug in <code>SemaphorePermit::merge</code> where permit counts exceeding <code>u32::MAX</code> wrapped and silently leaked permits on drop. Converted internal storage to <code>usize</code> with safe checked arithmetic, passing Tokio's strict Loom concurrency model checker. Merged into <code>master</code> by Alice Ryhl (Darksonn).
                         </p>
 
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
-                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Tokio Async Core</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Concurrency Primitives</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Integer Overflow Mitigation</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Loom Concurrency Model</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Tokio Async Runtime</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Concurrency &amp; Loom</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Integer Overflow Guard</span>
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
                                 View PR #8405 on GitHub →
@@ -541,88 +518,115 @@
                     </div>
                 </a>
 
-                <!-- Tier-1 PR: astral-sh / uv #21457 -->
-                <a href="https://github.com/astral-sh/uv/pull/21457" target="_blank" class="block group">
-                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
-                            ★ Tier-1 Astral Toolchain
-                        </div>
+                <!-- Merged PR: foundry-rs / foundry #16707 -->
+                <a href="https://github.com/foundry-rs/foundry/pull/16707" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
-                                    #21457
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #16707
                                 </div>
                                 <div>
-                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
-                                        <span>astral-sh / uv (Fast Python Package Manager in Rust — 45,000+ ★)</span>
-                                    </div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">foundry-rs / foundry (Paradigm Ethereum Toolchain)</div>
                                     <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
-                                        <span>feat(locks): thread lock timeouts via EnvironmentOptions for cross-process synchronization</span>
+                                        <span>fix(chisel): reject colons in session ids to prevent NTFS alternate data streams</span>
                                         <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
-                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
-                                100% Green CI (55/55 Passed)
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR
                             </span>
                         </div>
 
                         <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
-                            <strong>What was achieved:</strong> Resolved cross-process lock timeout propagation across Astral's entire workspace toolchain (#14720). Decoupled raw lock acquisition from static timeouts by threading configurable timeout parameters through <code>EnvironmentOptions</code>. Passed all 55 matrix CI test suites across 11 distinct OS/architecture configurations (Linux, Windows, macOS, Android, FreeBSD) with zero Clippy or Hawk warnings.
+                            <strong>What was achieved:</strong> Hardened session validation in Foundry's REPL (<code>crates/chisel</code>) by rejecting colons (<code>:</code>) along with path traversal characters. Prevents cache writes from escaping directory enumeration into Windows NTFS Alternate Data Streams (<code>chisel-foo:bar.json</code>), eliminating potential arbitrary disk escape vulnerabilities.
                         </p>
 
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
-                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Astral uv Core</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Cross-Process File Locks</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">55 Matrix CI Suites</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Thread-Safe Synchronization</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Foundry &amp; Paradigm</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">NTFS ADS Security</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Chisel REPL</span>
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
-                                View PR #21457 on GitHub →
+                                View PR #16707 on GitHub →
                             </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- Tier-1 PR: google / comprehensive-rust #3275 -->
-                <a href="https://github.com/google/comprehensive-rust/pull/3275" target="_blank" class="block group">
-                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-amber-600 hover:border-l-gold-500 shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-200/60 to-transparent px-4 py-1 text-[10px] font-mono font-bold text-amber-900 uppercase tracking-widest pointer-events-none">
-                            ★ Tier-1 Google Courseware
-                        </div>
+                <!-- Merged PR: superfly / corrosion #559 -->
+                <a href="https://github.com/superfly/corrosion/pull/559" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100/90 border border-amber-300 flex items-center justify-center text-amber-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
-                                    #3275
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #559
                                 </div>
                                 <div>
-                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600 font-semibold flex items-center gap-2">
-                                        <span>google / comprehensive-rust (Google Official Rust Courseware — 28,000+ ★)</span>
-                                    </div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">superfly / corrosion (Fly.io Distributed SQLite Cluster)</div>
                                     <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
-                                        <span>unsafe: accurately demonstrate Undefined Behavior using i32::unchecked_add</span>
+                                        <span>corro-pg: support PostgreSQL AST rollback handling and regression test</span>
                                         <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
                                     </h3>
                                 </div>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold self-start sm:self-auto shadow-sm">
-                                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-700"></i>
-                                100% Green CI (CLA Signed)
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR
                             </span>
                         </div>
 
                         <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
-                            <strong>What was achieved:</strong> Accurately modeled language-level Undefined Behavior in Google's official Rust courseware (#3122). Replaced benign wrapped arithmetic with intrinsic <code>i32::unchecked_add</code>, aligning pedagogical instruction directly with LLVM's integer overflow semantics per Google Staff Engineer design review.
+                            <strong>What was achieved:</strong> Implemented PostgreSQL wire protocol transaction abort state machine (SQLSTATE <code>25P02</code>) and Extended Query sync error recovery in <code>corro-pg</code>, ensuring failed distributed queries correctly trigger transactional rollback instead of cascading session errors.
                         </p>
 
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
                             <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
-                                <span class="px-2.5 py-1 rounded bg-amber-100/90 border border-amber-300 font-bold text-amber-950 shadow-sm">Google Rust Course</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Unsafe Rust Semantics</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">LLVM Undefined Behavior</span>
-                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">CLA Signed</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Fly.io Corrosion</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">PostgreSQL Protocol</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Distributed DB</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #559 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Merged PR: google / comprehensive-rust #3275 -->
+                <a href="https://github.com/google/comprehensive-rust/pull/3275" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #3275
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">google / comprehensive-rust (Google Official Rust Courseware)</div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>fix(unsafe): use unchecked_add in may_overflow to accurately model UB</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Accurately modeled language-level LLVM Undefined Behavior in Google's official unsafe Rust modules by using the intrinsic <code>i32::unchecked_add</code> rather than wrapping operations, passing Google Staff Engineer review.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Google Open Source</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Unsafe Rust</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">LLVM UB Modeling</span>
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
                                 View PR #3275 on GitHub →
