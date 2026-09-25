@@ -260,8 +260,8 @@
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
                     <div class="text-[10px] sm:text-xs font-mono text-gold-700 font-bold uppercase tracking-wider mb-1 sm:mb-2">Open Source</div>
-                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">10x Merged</div>
-                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Wasmtime, Tokio, Foundry, Corrosion, JA4, smoltcp</div>
+                    <div class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-mono">11x Merged</div>
+                    <div class="text-[11px] sm:text-xs text-slate-600 mt-1 sm:mt-2">Wasmtime, Tokio, Foundry, Corrosion, JA4 (2x), smoltcp, RuView</div>
                 </div>
 
                 <div class="p-4 sm:p-6 rounded-2xl glass-card-layered js-tilt" data-tilt data-tilt-max="8">
@@ -825,6 +825,46 @@
                             </div>
                             <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
                                 View PR #120 on GitHub →
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Merged PR: RuView #1 -->
+                <a href="https://github.com/Aditya-9-6/RuView/pull/1" target="_blank" class="block group">
+                    <div class="rounded-2xl p-5 sm:p-8 glass-card-pr border-l-4 border-l-purple-600 hover:border-l-gold-500">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-100/80 border border-purple-300 flex items-center justify-center text-purple-800 font-mono font-bold text-xs sm:text-sm shadow-inner shrink-0">
+                                    #1
+                                </div>
+                                <div>
+                                    <div class="text-[11px] sm:text-xs font-mono text-slate-600">RuView (ESP32 CSI Embedded Firmware &amp; Telemetry)</div>
+                                    <h3 class="text-base sm:text-2xl font-bold text-slate-900 group-hover:text-gold-700 transition-colors flex items-center gap-1.5">
+                                        <span>fix(firmware/onboarding): use base MAC for device_digest + host unit tests</span>
+                                        <i data-lucide="arrow-up-right" class="w-4 h-4 sm:w-5 sm:h-5 text-gold-600 shrink-0"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-100/90 text-purple-900 border border-purple-300 font-bold self-start sm:self-auto shadow-sm">
+                                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                                Merged PR
+                            </span>
+                        </div>
+
+                        <p class="text-slate-700 text-xs sm:text-base leading-relaxed mb-4">
+                            <strong>What was achieved:</strong> Resolved device fingerprint non-uniqueness in ESP32 embedded onboarding firmware (<code>serial_onboarding.c</code>) by extracting the hardware base MAC address via <code>esp_base_mac_addr_get()</code> as entropy for PSA SHA-256 digests. Engineered zero-dependency host C unit testing framework with isolated PSA crypto stubs and cross-platform compilation verification.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 sm:pt-4 border-t border-purple-200/40">
+                            <div class="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono text-slate-700">
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Embedded Systems</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">ESP32 Firmware</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">C99 / PSA Crypto</span>
+                                <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-white/70 border border-purple-200">Unit Testing</span>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-gold-700 flex items-center gap-1">
+                                View PR #1 on GitHub →
                             </span>
                         </div>
                     </div>
